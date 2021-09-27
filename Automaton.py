@@ -83,10 +83,13 @@ class Automaton:
         for row in range(self.rows):
             for col in range(self.cols):
 
-                # if cell is 1, assign a random rgb value, otherwise use white
+                # if cell is 1, assign a random red value with 50 percent probability
                 if self.board[row][col] == 1.0:
-                    r, g, b = random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)
-                    self.board[row][col] = (r, g, b)
+                    #r, g, b = random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)
+                    if random.random() > 0.6:
+                        self.board[row][col] = (255, 0, 0)
+                    else:
+                        self.board[row][col] = (255, 255, 255)
                 else:
                     # (255, 255, 255) is white
                     self.board[row][col] = (255, 255, 255)

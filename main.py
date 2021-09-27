@@ -16,10 +16,10 @@ def save_image(
 
 
 if __name__ == '__main__':
-    board = Automaton(50, 50, 90)
-    output_name = "rule_90"
-    save_image(output_name, board)
-    #board.transform_to_rgb()
-    #has_path, path = dfs(board)
-    #board.mark_visited(path)
-    #save_image(output_name+"dfs", board)
+    board = Automaton(50, 50, 254)
+    output_name = "test"
+    board.transform_to_rgb()
+    #save_image(output_name, board)
+    has_path, path = dfs(board)
+    board.mark_visited(path)
+    save_image(output_name+"dfs", board)
